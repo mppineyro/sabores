@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores Distintos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1719bc23db.js" crossorigin="anonymous"></script> 
+</head>
+
+<body>
+    <header>
+        <h1>Sabores Distintos</h1>
+    </header>
+    <!-- <section class="banner">     
+      <img src="img/especies_horizontal.png" alt="Sabores Distintos Banner">
+      <div class="bienvenido">
+        <h2>Cocinamos <br> Sabores Distintos <span> </span><br> para vos. </span></h2>
+      </div>
+    </section>      -->
+    <nav class="main-nav">
+        <ul>
+          <li><a href="Index.html">Principal</a></li>
+          <li><a href="#">Galeria</a></li>
+          <li><a href="about_us.html">Nosotros</a></li>
+          <li><a href="form.html">Contacto</a></li>
+        </ul>
+     </nav>
+     <main>
+        <!-- Contiene el formulario de contacto -->
+        <form action="/action_page.php">
+             
+            <div class="input-group">
+                <input type="text" id="nombre" required name="nombre"> 
+                <label for="nombre"> <i class="fas fa-user"></i> Nombre</label> <br>
+            </div>
+            <div class="input-group">
+                <input type="text" id="telefono" required name="telefono"> 
+                <label for="telefono"> <i class="fas fa-phone-square-alt"></i> Telefono</label> <br>
+            </div>
+            <div class="input-group">
+                <input type="text" id="email" required name="email"> 
+                <label for="email"><i class="fas fa-envelope"></i> Correo electronico</label> <br> <br>
+            </div>
+            <div class="input-group">
+                <textarea id="mensaje" rows="4" required> </textarea> 
+                <label for="mensaje"><i class="fas fa-comments"></i> Dejanos tu mensaje</label> <br>
+            </div>
+            <button type="submit"><i class="fas fa-paper-plane"></i> Enviar</button>
+        </form>
+    </main>     
+</body>
+<footer>
+            <p> © Copyright - Sabores Distintos </p> 
+</footer>
+</html>
