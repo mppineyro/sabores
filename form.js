@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const nombreValor = nombreInput.value.trim();
 
         //Validaciones de campos
-        if (nombreValor === "") { // Si está vacío o es un número
+        if (nombreValor === "") { // Si está vacío
             nombreInput.style.borderColor = "red";
             nombreInput.style.color = "red" 
             nombreInput.value = "El nombre es requerido"
             nombreInput.focus();
             return; 
         }
-        else if(!/^[a-zA-Z]+$/.test(nombreValor)){
+        else if(!/^[a-zA-Z]+$/.test(nombreValor)){ //Si es número
             nombreInput.style.borderColor = "red";
             nombreInput.style.color = "red" 
             nombreInput.value = "El nombre no puede contener números"
