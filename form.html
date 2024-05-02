@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" >
     <script src="https://kit.fontawesome.com/1719bc23db.js" crossorigin="anonymous"></script> 
+    <script src="form.js"></script>
+
+
 </head>
 
 <body>
@@ -23,22 +26,22 @@
      </nav>
      <main>
         <!-- Contiene el formulario de contacto -->
-        <form action="/action_page.php">
+        <form id="formulario" action="/action_page.php">
              
             <div class="input-group">
-                <input type="text" id="nombre" required name="nombre"> 
+                <input type="text" id="nombre" name="nombre"> 
                 <label for="nombre"> <i class="fas fa-user"></i> Nombre</label> <br>
             </div>
             <div class="input-group">
-                <input type="text" id="telefono" required name="telefono"> 
+                <input type="text" id="telefono" name="telefono"> 
                 <label for="telefono"> <i class="fas fa-phone-square-alt"></i> Telefono</label> <br>
             </div>
             <div class="input-group">
-                <input type="text" id="email" required name="email"> 
+                <input type="text" id="email" name="email"> 
                 <label for="email"><i class="fas fa-envelope"></i> Correo electronico</label> <br> <br>
             </div>
             <div class="input-group">
-                <textarea id="mensaje" rows="4" required> </textarea> 
+                <textarea id="mensaje" rows="4"> </textarea> 
                 <label for="mensaje"><i class="fas fa-comments"></i> Dejanos tu mensaje</label> <br>
             </div>
             <button type="submit"><i class="fas fa-paper-plane"></i> Enviar</button>
