@@ -166,15 +166,16 @@ textarea:valid~label {
 }
 
 /* styling de galeria */
-/* 
-#container_galeria {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-} */
 
 #img_galeria {
     width: 100%;
+    transition: all 0.5s;
+    object-fit: cover;
+}
+
+#img_galeria:hover {
+    transform: scale(1.2);
+    border-radius: 50%;
 }
 
 .fila {
