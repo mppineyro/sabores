@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Evita que se envíe el formulario por defecto
         event.preventDefault();
 
-        const regexNombre = /^[a-zA-Z]+$/
+        const regexNombre = /^([A-Za-zÃÃ‰ÃÃ“ÃšÃ±Ã¡Ã©Ã­Ã³ÃºÃ‘]{0}?[A-Za-zÃÃ‰ÃÃ“ÃšÃ±Ã¡Ã©Ã­Ã³ÃºÃ‘\']+[\s])+([A-Za-zÃÃ‰ÃÃ“ÃšÃ±Ã¡Ã©Ã­Ã³ÃºÃ‘]{0}?[A-Za-zÃÃ‰ÃÃ“ÃšÃ±Ã¡Ã©Ã­Ã³ÃºÃ‘\'])+[\s]?([A-Za-zÃÃ‰ÃÃ“ÃšÃ±Ã¡Ã©Ã­Ã³ÃºÃ‘]{0}?[A-Za-zÃÃ‰ÃÃ“ÃšÃ±Ã¡Ã©Ã­Ã³ÃºÃ‘\'])?$/
         const nombreInput = document.getElementById("nombre");
         const nombreValor = nombreInput.value.trim();
 
@@ -24,31 +24,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
         //Validaciones de Nombre
         const validarNombre = (!regexNombre.test(nombreValor)) 
-            ? formato(selector = "nombre", nombreInput.value = "El nombre no es válido")
-            : formato()
+            ? formatoError(selector = "nombre", nombreInput.value = "El nombre no es válido")
+            : formato(selector = "nombre")
         // //Validación Teléfono
         const validarTelefono = (!regexTelefono.test(telefonoValor))
-            ? formato(selector = "telefono", telefonoInput.value = "Por favor revise el número de teléfono")
-            : formato()
+            ? formatoError(selector = "telefono", telefonoInput.value = "Por favor revise el número de teléfono")
+            : formato(selector = "telefono")
         // // Validación E-mail
         const validarEmail = (!regexEmail.test(emailValor))
-            ? formato(selector = "email", emailInput.value = "Por favor revise el número de teléfono")
-            : formato()
+            ? formatoError(selector = "email", emailInput.value = "Por favor ingrese un email valido")
+            : formato(selector = "email")
+        // // Validación mensaje
 
-  
-        // else{
-        //     //to do: definir que hacemos cuando es valido
-        //     console.log("Mensaje " + mensajeValor)
-        //     mensajeInput.style.borderColor = ""
-        //     mensajeInput.style.color = "" 
-        //     //return;
-        // }
-        function formato(selector, mensaje) {
+        // Formatos campos
+        function formatoError(selector, mensaje) {
             document.querySelector('#' + selector).style.borderColor = "red";
-            document.querySelector('#' + selector).style.color = "red" 
+            document.querySelector('#' + selector).style.color = "red" ;
             document.querySelector('#' + selector).value = mensaje;
             document.querySelector('#' + selector).focus();
-            return
         }
+        function formato() {
+            document.querySelector('#' + selector).style.borderColor = "";
+            document.querySelector('#' + selector).style.color = "";            
+        }
+        
+        alert('validacion completa \n' + 'se enviaran los siguientes datos del formulario \n' + 
+        `nombre=&${nombreValor}&telefono=&${telefonoValor}&email=&${emailValor}&mensaje=&${mensajeValor}`);                                                          
+        
     })
 })
