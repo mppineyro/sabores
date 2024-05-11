@@ -29,19 +29,19 @@
         <form id="formulario" action="/action_page.php">
              
             <div class="input-group">
-                <input type="text" id="nombre" name="nombre"> 
+                <input type="text" id="nombre" name="nombre" required> 
                 <label for="nombre"> <i class="fas fa-user"></i> Nombre</label> <br>
             </div>
             <div class="input-group">
-                <input type="text" id="telefono" name="telefono"> 
+                <input type="tel" id="telefono" name="telefono" required > 
                 <label for="telefono"> <i class="fas fa-phone-square-alt"></i> Telefono</label> <br>
             </div>
             <div class="input-group">
-                <input type="text" id="email" name="email"> 
+                <input type="email" id="email" name="email" required > 
                 <label for="email"><i class="fas fa-envelope"></i> Correo electronico</label> <br> <br>
             </div>
             <div class="input-group">
-                <textarea id="mensaje" rows="4"> </textarea> 
+                <textarea id="mensaje" rows="4" required> </textarea> 
                 <label for="mensaje"><i class="fas fa-comments"></i> Dejanos tu mensaje</label> <br>
             </div>
             <button type="submit"><i class="fas fa-paper-plane"></i> Enviar</button>

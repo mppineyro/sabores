@@ -22,86 +22,33 @@ document.addEventListener("DOMContentLoaded", function() {
         const mensajeInput = document.getElementById("mensaje");
         const mensajeValor = mensajeInput.value.trim();
 
-
         //Validaciones de Nombre
-        if (nombreValor === "") { // Si está vacío
-            nombreInput.style.borderColor = "red";
-            nombreInput.style.color = "red" 
-            nombreInput.value = "El nombre es requerido"
-            nombreInput.focus();
-            //return; 
-        }
-        else if(!regexNombre.test(nombreValor)){ //Si es número
-            nombreInput.style.borderColor = "red";
-            nombreInput.style.color = "red" 
-            nombreInput.value = "El nombre no puede contener números"
-            nombreInput.focus();
-            //return;
-        }
-        else {
-            nombreInput.style.borderColor = "";
-            nombreInput.style.color = "" 
-    
-            //to do: definir que hacemos cuando el valor es valido
-        }
+        const validarNombre = (!regexNombre.test(nombreValor)) 
+            ? formato(selector = "nombre", nombreInput.value = "El nombre no es válido")
+            : formato()
+        // //Validación Teléfono
+        const validarTelefono = (!regexTelefono.test(telefonoValor))
+            ? formato(selector = "telefono", telefonoInput.value = "Por favor revise el número de teléfono")
+            : formato()
+        // // Validación E-mail
+        const validarEmail = (!regexEmail.test(emailValor))
+            ? formato(selector = "email", emailInput.value = "Por favor revise el número de teléfono")
+            : formato()
 
-        //Validación Teléfono
-        if (regexTelefono.test(telefonoValor)) {
-            //to do: definir que hacemos cuando es valido
-            console.log("Número válido");
-            console.log(telefonoValor)
-            telefonoInput.style.borderColor = "" 
-            telefonoInput.style.color = "" 
-            //return;
-
-        } else {
-            telefonoInput.style.borderColor = "red";
-            telefonoInput.style.color = "red" 
-            telefonoInput.value = "Por favor revise el número de teléfono"
-            telefonoInput.focus();
-            console.log(telefonoValor)
-            //return;
-        }
-
-        // Validación E-mail
-        if (regexEmail.test(emailValor)) {
-            //to do: definir que hacemos cuando es valido
-            console.log("Email válido: " + emailValor)
-            emailInput.style.borderColor = "" 
-            emailInput.style.color = "" 
-            //return;
-        }
-        else if(emailValor === ""){
-            emailInput.style.borderColor = "red";
-            emailInput.style.color = "red" 
-            emailInput.value = "El correo es requerido"
-            emailInput.focus();
-            console.log(emailValor)
-            //return;
-        }
-        else {
-            emailInput.style.borderColor = "red";
-            emailInput.style.color = "red" 
-            emailInput.value = "Formato de correo invalido"
-            emailInput.focus();
-            console.log(emailValor)
-            //return;
-        }
-
-        if (mensajeValor === "") {
-            mensajeInput.style.borderColor = "red";
-            mensajeInput.style.color = "red" 
-            mensajeInput.value="Un mensaje es requerido";
-            mensajeInput.focus();
-            console.log(mensajeValor)
-            //return;
-        }
-        else{
-            //to do: definir que hacemos cuando es valido
-            console.log("Mensaje " + mensajeValor)
-            mensajeInput.style.borderColor = ""
-            mensajeInput.style.color = "" 
-            //return;
+  
+        // else{
+        //     //to do: definir que hacemos cuando es valido
+        //     console.log("Mensaje " + mensajeValor)
+        //     mensajeInput.style.borderColor = ""
+        //     mensajeInput.style.color = "" 
+        //     //return;
+        // }
+        function formato(selector, mensaje) {
+            document.querySelector('#' + selector).style.borderColor = "red";
+            document.querySelector('#' + selector).style.color = "red" 
+            document.querySelector('#' + selector).value = mensaje;
+            document.querySelector('#' + selector).focus();
+            return
         }
     })
 })
