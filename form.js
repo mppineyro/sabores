@@ -29,30 +29,25 @@ document.addEventListener("DOMContentLoaded", function() {
             nombreInput.style.color = "red" 
             nombreInput.value = "El nombre es requerido"
             nombreInput.focus();
-            //return; 
         }
         else if(!regexNombre.test(nombreValor)){ //Si es número
             nombreInput.style.borderColor = "red";
             nombreInput.style.color = "red" 
             nombreInput.value = "El nombre no puede contener números"
             nombreInput.focus();
-            //return;
         }
         else {
             nombreInput.style.borderColor = "";
             nombreInput.style.color = "" 
-    
-            //to do: definir que hacemos cuando el valor es valido
+            
+            console.log("Nombre valido: " + nombreValor)
         }
 
         //Validación Teléfono
         if (regexTelefono.test(telefonoValor)) {
-            //to do: definir que hacemos cuando es valido
-            console.log("Número válido");
-            console.log(telefonoValor)
+            console.log("Número válido: " + telefonoValor);
             telefonoInput.style.borderColor = "" 
             telefonoInput.style.color = "" 
-            //return;
 
         } else {
             telefonoInput.style.borderColor = "red";
@@ -60,16 +55,13 @@ document.addEventListener("DOMContentLoaded", function() {
             telefonoInput.value = "Por favor revise el número de teléfono"
             telefonoInput.focus();
             console.log(telefonoValor)
-            //return;
         }
 
         // Validación E-mail
         if (regexEmail.test(emailValor)) {
-            //to do: definir que hacemos cuando es valido
             console.log("Email válido: " + emailValor)
             emailInput.style.borderColor = "" 
             emailInput.style.color = "" 
-            //return;
         }
         else if(emailValor === ""){
             emailInput.style.borderColor = "red";
@@ -77,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function() {
             emailInput.value = "El correo es requerido"
             emailInput.focus();
             console.log(emailValor)
-            //return;
         }
         else {
             emailInput.style.borderColor = "red";
@@ -85,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function() {
             emailInput.value = "Formato de correo invalido"
             emailInput.focus();
             console.log(emailValor)
-            //return;
         }
 
         if (mensajeValor === "") {
@@ -94,14 +84,25 @@ document.addEventListener("DOMContentLoaded", function() {
             mensajeInput.value="Un mensaje es requerido";
             mensajeInput.focus();
             console.log(mensajeValor)
-            //return;
         }
         else{
-            //to do: definir que hacemos cuando es valido
             console.log("Mensaje " + mensajeValor)
             mensajeInput.style.borderColor = ""
             mensajeInput.style.color = "" 
-            //return;
+        }
+
+        // Validación para el checkbox de términos y condiciones
+        const terminosCheckbox = document.querySelector('#terminos input[type="checkbox"]');
+        const labelTerminos = document.querySelector('label[for="terminos"]');
+        
+        if (!terminosCheckbox.checked) {
+            labelTerminos.style.color = "red";
+            labelTerminos.textContent = "Es obligatorio aceptar los términos y condiciones";
+            return;
+        } else {
+            labelTerminos.style.color = "";
+            labelTerminos.textContent = "Acepto términos y condiciones"; 
+            console.log("Términos aceptados")
         }
     })
 })
