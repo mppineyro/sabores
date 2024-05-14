@@ -105,3 +105,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     })
 })
+
+
+function toggleMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav ul');
+
+    // Alternar la clase 'active' para el menú hamburguesa y la navegación principal
+    menuToggle.classList.toggle('active');
+    mainNav.classList.toggle('active');
+}

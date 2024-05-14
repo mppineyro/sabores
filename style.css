@@ -9,7 +9,7 @@ body, ul,li, h1, h2, a {
 header {
     background-color: rgb(231, 230, 230);
     color: #4B4B4B;
-    padding: 10px;
+    padding: 20px 5px;
     text-align: center;
     position: fixed;
     width: 100%;
@@ -19,10 +19,12 @@ header {
 }
 
 header h1 {
-    font-size: 25px;
+    font-size: 24px;
+    height: 30px;
 }    
 
 nav {
+    font-size: 24px;
     background-color: #f4f4f4;
     padding: 20px;    
     position: sticky;
@@ -37,9 +39,9 @@ nav ul {
 }
 
 nav li {
-    width: 25%;
+    width: 20%;
     display: inline-block;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 nav li a {
@@ -49,8 +51,8 @@ nav li a {
 
 main {
     max-width: 100%;
-    width: 1200px;
-    margin: 80px auto;
+    width: 1300px;
+    margin: 200px 0 0 0;
     padding: 0 40px;
     box-sizing: border-box;
 }
@@ -202,5 +204,60 @@ textarea:valid~label {
 @media (max-width: 600px) {
     .columna {
         flex: 100%;
+    }
+}
+
+/* Estilo para el menú hamburguesa */
+.menu-toggle {
+    display: none; /* Ocultar por defecto en pantallas grandes */
+    cursor: pointer;
+}
+
+.menu-toggle i {
+    font-size: 24px;
+}
+
+/* Estilo para la navegación principal */
+.main-nav {
+    text-align: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* Media Query para mostrar el menú hamburguesa en dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostrar en dispositivos más pequeños */
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .main-nav {
+        display: none; /* Ocultar por defecto en dispositivos pequeños */
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .main-nav.active {
+        display: block; /* Mostrar cuando el menú está activo */
+    }
+
+    .main-nav li {
+        display: block;
+        margin: 10px 0;
     }
 }
