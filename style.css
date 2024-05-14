@@ -95,6 +95,12 @@ footer{
 }
 
 /* styling para el formulario */
+
+#formulario{
+    align-items: center;
+    justify-content:center;
+}
+
 form {
     width: 90%;
     max-width: 600px;
@@ -145,6 +151,10 @@ textarea:valid~label {
     top: -35px;
     font-size: 14px;
 }   
+
+.input-group.terms {
+    position: relative;
+}
 
 /* styling de about_us */
 
