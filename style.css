@@ -271,3 +271,21 @@ textarea:valid~label {
         margin: 10px 0;
     }
 }
+
+
+
+#checkbox-terminos{
+    width: 15px;
+}
+
+#aceptado{
+    padding-left: 15px
+}
+
+.aceptar{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+
