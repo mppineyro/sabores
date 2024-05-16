@@ -126,6 +126,19 @@ label{
     cursor: text;
     transition: 0.2s;
 }
+#checkbox-terminos {
+    width: 15px;
+}
+
+#aceptado {
+    padding-left: 15px
+}
+
+.aceptar {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
 
 button{
     padding: 10px;

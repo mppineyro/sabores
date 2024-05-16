@@ -43,13 +43,27 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelector('#' + selector).value = mensaje;
             document.querySelector('#' + selector).focus();
         }
-        function formato() {
+        function formato(selector) {
             document.querySelector('#' + selector).style.borderColor = "";
-            document.querySelector('#' + selector).style.color = "";            
+            document.querySelector('#' + selector).style.color = "";
+                       
         }
-        
+        // Validación para el checkbox de términos y condiciones
+        const terminosCheckbox = document.querySelector('#terminos input[type="checkbox"]');
+        const labelTerminos = document.querySelector('label[for="terminos"]');
+
+        if (!terminosCheckbox.checked) {
+            labelTerminos.style.color = "red";
+            labelTerminos.textContent = "Es obligatorio aceptar los términos y condiciones";
+            
+        } else {
+            labelTerminos.style.color = "";
+            labelTerminos.textContent = "Acepto términos y condiciones";
+            console.log("Términos aceptados")
+        }
+        if (regexNombre.test(nombreValor) && regexTelefono.test(telefonoValor) && regexEmail.test(emailValor) && terminosCheckbox.checked){          
         alert('validacion completa \n' + 'se enviaran los siguientes datos del formulario \n' + 
         `nombre=&${nombreValor}&telefono=&${telefonoValor}&email=&${emailValor}&mensaje=&${mensajeValor}`);                                                          
-        
+        }
     })
 })
