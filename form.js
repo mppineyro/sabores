@@ -22,6 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const mensajeInput = document.getElementById("mensaje");
         const mensajeValor = mensajeInput.value.trim();
 
+        const valorRadio = document.querySelectorAll('input[type="radio"]');
+        const valorSelect = document.getElementById("horario");
+
+        const terminosCheckbox = document.getElementById('checkbox-terminos');
+        
+        
         //Validaciones de Nombre
         const validarNombre = (!regexNombre.test(nombreValor)) 
             ? formatoError(selector = "nombre", nombreInput.value = "El nombre no es válido")
@@ -34,8 +40,16 @@ document.addEventListener("DOMContentLoaded", function() {
         const validarEmail = (!regexEmail.test(emailValor))
             ? formatoError(selector = "email", emailInput.value = "Por favor ingrese un email valido")
             : formato(selector = "email")
-        // // Validación mensaje
 
+        // Seleccion Radio
+        let radio_Valor = "";
+        function radioValor (){
+        valorRadio.forEach(valor => {
+            if (valor.checked) { 
+                radio_Valor = valor.value; 
+            }
+        });
+        }
         // Formatos campos
         function formatoError(selector, mensaje) {
             document.querySelector('#' + selector).style.borderColor = "red";
@@ -48,22 +62,18 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelector('#' + selector).style.color = "";
                        
         }
-        // Validación para el checkbox de términos y condiciones
-        const terminosCheckbox = document.querySelector('#terminos input[type="checkbox"]');
-        const labelTerminos = document.querySelector('label[for="terminos"]');
-
-        if (!terminosCheckbox.checked) {
-            labelTerminos.style.color = "red";
-            labelTerminos.textContent = "Es obligatorio aceptar los términos y condiciones";
-            
-        } else {
-            labelTerminos.style.color = "";
-            labelTerminos.textContent = "Acepto términos y condiciones";
-            console.log("Términos aceptados")
-        }
+        // Validación del formulario
+        
         if (regexNombre.test(nombreValor) && regexTelefono.test(telefonoValor) && regexEmail.test(emailValor) && terminosCheckbox.checked){          
-        alert('validacion completa \n' + 'se enviaran los siguientes datos del formulario \n' + 
-        `nombre=&${nombreValor}&telefono=&${telefonoValor}&email=&${emailValor}&mensaje=&${mensajeValor}`);                                                          
+            radioValor();
+            alert('Validación completa\n' +
+                'Se enviarán los siguientes datos del formulario:\n' +
+                `Nombre: ${nombreValor}\n` +
+                `Teléfono: ${telefonoValor}\n` +
+                `Email: ${emailValor}\n` +
+                `Mensaje: ${mensajeValor}\n` +
+                `Contacto: ${radio_Valor}\n` +  // Utiliza la variable que almacena el valor del botón de radio
+                `Horario: ${valorSelect.value}`);                                                          
         }
     })
 })

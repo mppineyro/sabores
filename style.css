@@ -126,6 +126,30 @@ label{
     cursor: text;
     transition: 0.2s;
 }
+.fieldset{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #4B4B4B;
+    padding: 20px;
+}
+fieldset label{
+    position: relative;
+}
+fieldset input{
+    width: auto;
+}
+.medio{
+    display: flex;
+    justify-content: space-evenly;
+}
+.horario{
+    display: flex;
+    justify-content: center;
+}
+.horario select{
+    width: 100%;
+    font-size: 15px;
+}
 #checkbox-terminos {
     width: 15px;
 }

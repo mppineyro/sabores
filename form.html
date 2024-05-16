@@ -44,9 +44,34 @@
                 <textarea id="mensaje" rows="4"> </textarea> 
                 <label for="mensaje"><i class="fas fa-comments"></i> Dejanos tu mensaje</label> <br>
             </div>
+
+            <fieldset class="fieldset">
+                <legend>¿Cómo le gustaría que lo contactemos?</legend>
+                <fieldset class="medio">
+                    <legend>Elija el medio de contacto</legend>
+                    <label for="radio-email"><input type="radio" name="contacto" value="email" 
+                        class="radio" id="radio-email">Email</label>
+                
+                    <label for="radio-telefono"><input type="radio" name="contacto" value="telefono"
+                        class="radio" id="radio-telefono">Teléfono</label>
+                
+                    <label for="radio-whatsapp"><input type="radio" name="contacto" value="whatsapp" 
+                        class="radio" id="radio-whatsapp" checked>WhatsApp</label>
+                </fieldset>
+                <br>
+                <fieldset class="horario">
+                    <legend>Elija horario de preferencia</legend>
+                    <select id="horario">
+                        <option value="mañana" selected>Mañana</option>
+                        <option value="tarde">Tarde</option>
+                        <option value="noche">Noche</option>
+                    </select>
+                </fieldset>
+            </fieldset>
+            
             <div class="input-group" id="terminos">
             <div class="aceptar">
-                <input type="checkbox" value="aceptado" id="checkbox-terminos">
+                <input type="checkbox" value="aceptado" id="checkbox-terminos" required>
                 <p id="aceptado">Acepto términos y condiciones</p>
             </div>
             </div>
